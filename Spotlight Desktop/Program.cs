@@ -43,7 +43,14 @@ namespace Spotlight_Desktop
         {
             AttachConsole(-1);
 
+            string lastestCurrentImage = FindImage.FindCurrentImage();
+            if (_currSpotlightPath != lastestCurrentImage)
+            {
+                _currSpotlightPath = lastestCurrentImage;
+                UpdateDesktop();
+            }
 
+            /*
             int count = 0;
             while (true)
             {
@@ -71,6 +78,7 @@ namespace Spotlight_Desktop
                 Thread.Sleep(60 * 1000);
                 count++;
             }
+            */
         }
     }
 }
